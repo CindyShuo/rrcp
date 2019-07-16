@@ -1,17 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import AccountIndex from './views/account/AccountIndex'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'AccountIndex',
+      component: AccountIndex
     },
     {
       path: '/about',
@@ -23,3 +26,5 @@ export default new Router({
     }
   ]
 })
+
+export default router

@@ -1,6 +1,7 @@
 <template>
   <a class='common-button'
-     :class="`common-button--${type}`">{{ text }}</a>
+     :class="`common-button--${type}`"
+     @click="clickHandle">{{ text }}</a>
 </template>
 
 <script>
@@ -14,6 +15,11 @@ export default {
     type: {
       type: String,
       default: 'default'
+    }
+  },
+  methods: {
+    clickHandle () {
+      this.$emit('clickHandle')
     }
   }
 }

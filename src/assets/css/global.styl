@@ -1,9 +1,84 @@
 $buttonColor = #3D4CB1
-
-.account-button {
-  margin 0 auto
-  width 6.9rem
+.el-message
+  padding 0.2rem
+  min-width 4rem
+  .el-message__icon
+    font-size 0.4rem
+  .el-message__content
+    padding-right 0.16rem
+    font-size 0.28rem
+  .el-message__closeBtn
+    right 0.15rem
+.common-button
+  display flex
+  justify-content center
+  align-items center
+  width 100%
   height 1rem
-  border-radius .2rem
+  border none
+  border-radius 0.2rem
+  background-color $buttonColor
+  font-size 0.34rem
   font-weight bold
-}
+  span
+    color #fff
+  &--primary
+    border 0.02rem solid $buttonColor
+    background none
+    span
+      color $buttonColor
+  &:active, &:hover
+    background-color $buttonColor
+    color #fff
+    opacity 1
+    span
+      color #fff
+  // &.is-loading:before
+  // background-color transparent
+  .el-icon-loading
+    color #fff
+.account
+  .content
+    padding 0 0.3rem
+  &__header
+    height 0.86rem
+  &__title
+    margin-top 0.5rem
+    line-height 0.66rem
+    font-size 0.48rem
+  &__form
+    margin-top 0.8rem
+    .form-item
+      position relative
+      margin-top 0.6rem
+      height 0.4rem
+      &:first-child
+        margin-top 0
+      input
+        position relative
+        display block
+        width 100%
+        height 100%
+        padding 0 1.52rem
+        background-color transparent
+        font-size 0.28rem
+      .prefix, .suffix
+        position absolute
+        top 0
+        height 100%
+        font-size 0.28rem
+        color #C7C7CC
+      .preifx
+        left 0
+      .suffix
+        right 0
+    .common-button
+      margin-top 0.8rem
+  &__handle
+    display flex
+    justify-content space-between
+    margin-top 0.4rem
+    a
+      line-height 0.4rem
+      font-size 0.28rem
+      color #FF9500

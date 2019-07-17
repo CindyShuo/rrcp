@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import AccountIndex from './views/account/AccountIndex'
+const AccountLogin = () => import(/* webpackChunkName: "AccountLogin" */ './views/account/AccountLogin')
+const AccountRegister = () => import(/* webpackChunkName: "AccountRegister" */ './views/account/AccountRegister')
+const AccountFindPassword = () => import(/* webpackChunkName: "AccountFindPassword" */ './views/account/AccountFindPassword')
+const AccountFindPasswordSuccess = () => import(/* webpackChunkName: "AccountFindPasswordSuccess" */ './views/account/AccountFindPasswordSuccess')
 
 Vue.use(Router)
 
@@ -17,12 +22,24 @@ const router = new Router({
       component: AccountIndex
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/login',
+      name: 'AccountLogin',
+      component: AccountLogin
+    },
+    {
+      path: '/register',
+      name: 'AccountRegister',
+      component: AccountRegister
+    },
+    {
+      path: '/find_password',
+      name: 'AccountFindPassword',
+      component: AccountFindPassword
+    },
+    {
+      path: '/find_password_success',
+      name: 'AccountFindPasswordSuccess',
+      component: AccountFindPasswordSuccess
     }
   ]
 })

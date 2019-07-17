@@ -1,21 +1,20 @@
 <template>
-  <div class="account-index">
+  <div class="account-index account">
     <div class="logo"></div>
-    <common-button class="account-button"
-                   text="登录"></common-button>
-    <common-button class="account-button"
-                   style="margin-top: .4rem"
-                   text="注册"
-                   type="primary"></common-button>
-    <p class="user-agree">登录即表示同意 <a>《挖优狗用户协议》</a></p>
+    <div class="content">
+      <router-link to="/login"
+                   class="common-button">登录</router-link>
+      <router-link to="/register"
+                   class="common-button common-button--primary"
+                   style="margin-top: .4rem">注册</router-link>
+      <p class="user-agree">登录即表示同意 <a>《挖优狗用户协议》</a></p>
+    </div>
   </div>
 </template>
 
 <script>
-import CommonButton from '../../components/common/CommonButton'
 export default {
-  name: 'AccountIndex',
-  components: { CommonButton }
+  name: 'AccountIndex'
 }
 </script>
 

@@ -21,7 +21,7 @@ export default {
   mounted () {
     setTimeout(() => {
       this.entryStatus = false
-    }, 3000)
+    }, 0)
   }
 }
 </script>

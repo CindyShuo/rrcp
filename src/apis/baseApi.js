@@ -24,6 +24,36 @@ const BaseApi = {
       new_pwd: newPwd,
       new_pwd_confirmation: newPwd
     })
+  },
+  // 刷新Token状态
+  refresh: () => {
+    return baseAxios.post('/refresh')
+  },
+
+  /* 用户中心 */
+  // 获取用户信息
+  getUserInfo: () => {
+    return baseAxios.post('/me')
+  },
+  // 获取用户验证状态
+  getUserStatus: () => {
+    return baseAxios.post('/status')
+  },
+  // kyc
+  getKyc: (formData) => {
+    return baseAxios.post('/kyc', {
+      truename: formData.truename,
+      card_number: formData.card_number,
+      email_code: formData.email_code
+    })
+  },
+  // 重置密码
+  resetPwd: (formData) => {
+    return baseAxios.post('/resetPwd', {
+      new_pwd: formData.new_pwd,
+      new_pwd_confirmation: formData.new_pwd_confirmation,
+      email_code: formData.email_code
+    })
   }
 }
 

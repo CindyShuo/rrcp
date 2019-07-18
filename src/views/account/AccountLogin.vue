@@ -1,6 +1,7 @@
 <template>
   <div class="account-login account">
-    <common-header class="account__header"></common-header>
+    <common-header :show-back="true"
+                   class="account__header"></common-header>
     <div class="content">
       <h3 class="account__title">邮箱登录</h3>
       <form @submit.prevent="submit"
@@ -73,6 +74,7 @@ export default {
         })
         .then(() => {
           this.loading = false
+          this.$router.replace('/')
         })
         .catch(error => {
           this.$message({

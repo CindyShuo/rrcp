@@ -3,6 +3,7 @@
     <p style="color: #999;"
        v-if="count > 0">{{ count }}秒后再次发送</p>
     <p @click="getEmailCode"
+       style="color: #F6AA00;"
        v-else>获取验证码</p>
   </div>
 </template>
@@ -65,7 +66,4 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.common-email-code
-  color #F6AA00
-</style>
+<style lang="stylus" scoped></style>

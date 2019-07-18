@@ -1,6 +1,6 @@
 // axios配置
 import axios from 'axios'
-import Cookies from 'js-cookie'
+// import Cookies from 'js-cookie'
 
 const instance = axios.create({
   baseURL: 'https://api.rrcp.io/api',
@@ -21,9 +21,9 @@ instance.interceptors.request.use(
     //   config.data = qs.stringify(config.data)
     // }
     // 无token时，尝试重新获取token
-    // if (!config.headers['accessToken']) {
-    //   config.headers['accessToken'] = Utils.getToken()
-    // }
+    if (window.localStorage.fm_token) {
+      config.headers['Authorization'] = 'Bearer ' + window.localStorage.fm_token
+    }
     // if (!config.headers['accountNo']) {
     //   config.headers['accountNo'] = Utils.getAccountNo()
     // }
@@ -48,11 +48,9 @@ instance.interceptors.response.use(
   error => {
     if (error.response.status === 503) {
       window.localStorage.removeItem('fm_token')
-      Cookies.remove('fm_token')
     }
     if (error.response.status === 403) {
       window.localStorage.removeItem('fm_token')
-      Cookies.remove('fm_token')
     }
     return Promise.reject(error.response || error)
   }

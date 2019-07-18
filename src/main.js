@@ -15,8 +15,15 @@ Vue.router = router
 
 Vue.prototype.$baseApi = BaseApi
 
-new Vue({
+const init = () => new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+
+if (window.localStorage.fm_token) {
+  store.dispatch('refresh')
+    .finally(() => {
+      init()
+    })
+} else init()

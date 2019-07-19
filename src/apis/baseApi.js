@@ -54,6 +54,10 @@ const BaseApi = {
       new_pwd_confirmation: formData.new_pwd_confirmation,
       email_code: formData.email_code
     })
+  },
+  // 资产管理
+  getBalance: () => {
+    return baseAxios.post('/balances')
   }
 }
 

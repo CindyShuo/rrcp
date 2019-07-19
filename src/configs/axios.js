@@ -39,8 +39,6 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   res => {
     if (parseInt(res.status) !== 200) return Promise.reject(res)
-    // 文件流
-    if (res.config.responseType === 'blob') return res.data
     // 接口
     if (res.data && res.data.status === 1) return res.data
     return Promise.reject(res)

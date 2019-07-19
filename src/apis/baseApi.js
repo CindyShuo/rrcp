@@ -58,6 +58,33 @@ const BaseApi = {
   // 资产管理
   getBalance: () => {
     return baseAxios.post('/balances')
+  },
+  // 币种资产
+  getPreview: (id) => {
+    return baseAxios.post('/preview', {
+      coin_id: id // 币种id
+    })
+  },
+  // 币种充提记录
+  getExchange: (id, type, page, size) => {
+    return baseAxios.post('/exchanges', {
+      coin_id: id, // 币种id
+      opt_type: type, // 充值--1, 提现--2
+      page: page, // 页码
+      size: size // 每页数量
+    })
+  },
+  // 资产流水
+  getFlow: () => { // 返回没有status，需加上
+    return baseAxios.post('/flows')
+  },
+
+  /* 首页 */
+  // 获取模型id
+  getFundId: (filters) => {
+    return baseAxios.post('/fundsId', {
+      filters
+    })
   }
 }
 

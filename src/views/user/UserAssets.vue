@@ -3,7 +3,8 @@
     <header class="assets-header user-assets__header">
       <div class="title">
         <h2>资产</h2>
-        <a class="suffix">流水</a>
+        <router-link to="/assets/flow"
+                     class="suffix">流水</router-link>
       </div>
       <div class="all-assets">
         <div class="assets-title">总资产折合(BTC)</div>
@@ -96,8 +97,8 @@ export default {
           font-weight bold
           color $buttonColor
       .table
-        margin-top 0.2rem
         display flex
+        margin-top 0.2rem
         .table-td
           .table-title
             line-height 0.34rem
@@ -112,4 +113,5 @@ export default {
             min-width 1.48rem
           &:nth-child(2)
             flex 1
+            margin-left 0.7rem
 </style>

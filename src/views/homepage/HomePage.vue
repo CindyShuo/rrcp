@@ -1,11 +1,32 @@
 <template>
-  <div class="home-page">123</div>
+  <div class="home-page">
+    <div class="home-page__top">
+      <fund-total />
+    </div>
+    <assets-nav />
+    <div class="home-page__ad"></div>
+    <fund-list />
+  </div>
 </template>
 
 <script>
+import FundTotal from '../../components/home/FundTotal'
+import AssetsNav from '../../components/home/AssetsNav'
+import FundList from '../../components/home/FundList'
+
 export default {
-  name: ''
+  name: 'HomePage',
+  components: { FundTotal, AssetsNav, FundList }
 }
 </script>
 
-<style lang='stylus' scoped></style>
+<style lang='stylus' scoped>
+.home-page
+  background-color #FAFAFA
+  &__top
+    background-color #fff
+  &__ad
+    width 100%
+    height 1.6rem
+    background-color #000
+</style>

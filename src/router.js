@@ -13,6 +13,8 @@ const Kyc = () => import(/* webpackChunkName: "Kyc" */ './views/user/Kyc')
 const Google = () => import(/* webpackChunkName: "Google" */ './views/user/Google')
 const ResetPassword = () => import(/* webpackChunkName: "ResetPassword" */ './views/user/ResetPassword')
 const UserAssets = () => import(/* webpackChunkName: "UserAssets" */ './views/user/UserAssets')
+const AssetsFlow = () => import(/* webpackChunkName: "AssetsFlow" */ './views/user/AssetsFlow')
+const AssetsDetail = () => import(/* webpackChunkName: "AssetsDetail" */ './views/user/AssetsDetail')
 
 Vue.use(Router)
 
@@ -87,6 +89,24 @@ const router = new Router({
       path: '/assets',
       name: 'UserAssets',
       component: UserAssets,
+      beforeEnter: authUser,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: '/assets/detail/:id',
+      name: 'AssetsDetail',
+      component: AssetsDetail,
+      beforeEnter: authUser,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: '/assets/flow',
+      name: 'AssetsFlow',
+      component: AssetsFlow,
       beforeEnter: authUser,
       meta: {
         requireAuth: true

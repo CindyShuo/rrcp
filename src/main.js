@@ -5,6 +5,7 @@ import store from './store'
 
 import BaseApi from './apis/baseApi'
 
+import mixins from './mixins'
 import './element.js'
 
 import './assets/css/global.styl'
@@ -12,8 +13,8 @@ import './assets/css/global.styl'
 Vue.config.productionTip = false
 
 Vue.router = router
-
 Vue.prototype.$baseApi = BaseApi
+Vue.mixin(mixins)
 
 const init = () => new Vue({
   router,

@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     getFundId (filter) {
-      return this.$baseApi.getFundId(filter)
+      return this.$baseApi.getFundId()
         .then(res => {
           console.log(res)
         })

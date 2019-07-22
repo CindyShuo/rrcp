@@ -1,13 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+// 账户
 import AccountIndex from './views/account/AccountIndex'
 const AccountLogin = () => import(/* webpackChunkName: "AccountLogin" */ './views/account/AccountLogin')
 const AccountRegister = () => import(/* webpackChunkName: "AccountRegister" */ './views/account/AccountRegister')
 const AccountFindPassword = () => import(/* webpackChunkName: "AccountFindPassword" */ './views/account/AccountFindPassword')
 const AccountFindPasswordSuccess = () => import(/* webpackChunkName: "AccountFindPasswordSuccess" */ './views/account/AccountFindPasswordSuccess')
+// tab layout
 const MainIndex = () => import(/* webpackChunkName: "MainIndex" */ './views/container/MainIndex')
+// 首页
 const HomePage = () => import(/* webpackChunkName: "HomePage" */ './views/homepage/HomePage')
+// 行情
+const MarketList = () => import(/* webpackChunkName: "MarketList" */ './views/market/MarketList')
+// 模型
+const ModelList = () => import(/* webpackChunkName: "ModelList" */ './views/model/ModelList')
+// 动态
+const NewsList = () => import(/* webpackChunkName: "NewsList" */ './views/news/NewsList')
+// 用户中心
 const UserCenter = () => import(/* webpackChunkName: "UserCenter" */ './views/user/UserCenter')
 const Kyc = () => import(/* webpackChunkName: "Kyc" */ './views/user/Kyc')
 const Google = () => import(/* webpackChunkName: "Google" */ './views/user/Google')
@@ -50,6 +60,21 @@ const router = new Router({
           path: '',
           name: 'HomePage',
           component: HomePage
+        },
+        {
+          path: '/market',
+          name: 'MarketList',
+          component: MarketList
+        },
+        {
+          path: '/model',
+          name: 'ModelList',
+          component: ModelList
+        },
+        {
+          path: '/news',
+          name: 'NewsList',
+          component: NewsList
         },
         {
           path: '/user',
